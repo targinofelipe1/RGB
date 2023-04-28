@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         this.fabAdicionar = findViewById(R.id.fabAdicionar)
 
         this.rvCor.adapter = CorAdapter(this.cores.get())
+        (this.rvCor.adapter as CorAdapter).onItemClickListener = OnItemClick()
         ItemTouchHelper(OnSwipe()).attachToRecyclerView(this.rvCor)
 
 
